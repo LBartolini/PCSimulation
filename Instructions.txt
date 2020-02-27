@@ -1,0 +1,48 @@
+END  :  0, 0, 0, 0
+non riceve nessun operando, quando viene eseguita il computer termina di eseguire Cicli Macchina
+
+ADD  :  0, 0, 0, 1
+somma i dati contenuti in AX e in DX
+riceve due operandi implicito situato in AX e  DX
+pone il risultato in AX
+
+LAX  :  0, 0, 1, 0
+Carica dalla memoria in AX
+Operando esplicito (4 bit contenenti l'indirizzo del dato in memoria RAM)
+
+LDX :  0, 0, 1, 1
+Carica dalla memoria in DX
+Operando esplicito (4 bit contenenti l'indirizzo del dato in memoria RAM)
+
+MAX  :  0, 1, 0, 0
+Carica in memoria da AX
+Operando esplicito (4 bit contenenti l'indirizzo del dato in memoria RAM)
+
+MDX  :  0, 1, 0, 1
+Carica in memoria da DX
+Operando esplicito (4 bit contenenti l'indirizzo del dato in memoria RAM)
+
+SUB : 0, 1, 1, 0
+Sottrae il contenuto di DX da AX (AX - DX) e pone il risultato in AX
+Operandi impliciti AX, DX
+op esplicito 0001 se si fa la sottrazione come Compare, altrimenti 0000 per quella normale
+
+INN : 0, 1, 1, 1
+Prende un numero in input e lo mette in DX
+
+OUT : 1, 0, 0, 0
+Stampa in output un numero da DX
+
+JMP : 1, 0, 0, 1
+Pone il program counter ad un valore specificato
+Op esplicito è in binario l'indirizzo in RAM
+
+JMZ : 1, 0, 1, 0
+se il valore nel registro ax è 0 fa un salto all'indirizzo che si trova nell'operando
+
+JMG : 1, 0, 1, 1
+se il valore nel registro ax è maggiore di DX fa un salto all'indirizzo che si trova nell'operando
+si riferisce ad un particolare flag che è impostato sull'ultima sottrazione eseguita(previa sottrazione)
+
+SWC : 1, 1, 0, 0
+inverte il valore dei registri

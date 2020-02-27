@@ -1,0 +1,45 @@
+END : []
+Nessuna sotto istruzione, viene decodificato e il pc si ferma
+
+ADD : [1]
+somma ah e al, risultato in al
+SUB : [7]
+
+LAX : [2, 3]
+LDX : [2, 4]
+
+MAX : [5, 0]
+MDX : [6, 0]
+
+INN : [8, 9, 4]
+OUT : [6, 10, 11]
+
+JMP : [12]
+JMZ : [13]
+JMG : [14]
+
+SWC : [15]
+-------------
+0 = carica dal bus in memoria
+1 = Somma Ax e Dx con risultato in Ax
+2 = carica dalla memoria nel bus
+
+3 = carica in ax dal bus
+4 = carica in dx dal bus
+
+5 = carica da ax nel bus
+6 = carica da dx nel bus
+
+7 = sottrae da AX, DX (AX-DX) risultato in AX
+
+8 = input da Io nel Buffer
+9 = Buffer in BUS
+10 = Bus in Buffer
+
+11 = Output IO dal buffer
+
+12 = Pone il PRC al valore dell'operando
+13 = Pone il PRC al valore dell'operando se il valore in AX è 0
+14 = Pone il PRC al valore dell'operando se il valore in AX è maggiore di DX(previa sottrazione)
+
+15 = inverte il valore dei registri
